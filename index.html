@@ -1,0 +1,307 @@
+<!doctype html>
+<html><head>
+<meta charset="UTF-8">
+
+<meta name="copyright" content="Seth Akkerman and Pseudo Suede Studios. All rights reserved." />
+<meta name="description" content="Seth Akkerman is a designer and thinker who likes to laugh with people." />
+
+<meta name="keywords" content="Pseudo Suede Studios,Seth Akkerman,Making More,Secrety Society of Ink Slingers,Cooking,Drawing,Printmaking,Screen Printing,Brewing,Graphic Design,Savannah,Georgia,SCAD,Interactive Media,Web Design,jQuery,Illustration,Branding,Motion Design,Corporate Identity,Brand Development,Typography" />
+
+<meta name="author" content="Seth Akkerman" />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<title>The Digital Calling Card of Seth Akkerman</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<script type="text/javascript" src="//use.typekit.net/ynd2fon.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<link rel="shortcut icon" href="http://www.sethakkerman.com/2014/favicon.ico" />
+<link href="css/sethakkerman.min.css" rel="stylesheet" type="text/css">
+
+<!-- For third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="touch_icons/apple-touch-icon-144x144-precomposed.png">
+<!-- For iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="touch_icons/apple-touch-icon-114x114-precomposed.png">
+<!-- For first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="touch_icons/apple-touch-icon-72x72-precomposed.png">
+<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="touch_icons/apple-touch-icon-precomposed.png">
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34292193-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+
+<div id="text_background">
+<div id="text_holder">
+ <div id="text_wrapper">
+ 	<h1 class="text_header">Seth Akkerman</h1>
+    <p class="text_body">I am a designer who likes to laugh with people. My goal is to create and develop useful, aesthetically appropriate projects for invested clients who appreciate the importance of thoughtful design.</p>
+<p class="text_body">Visit my <a href="http://www.pseudosuede.com" target="_blank">Portfolio</a> or <a href="mailto:sakkerman@pseudosuede.com">E-mail</a>.</p>
+</div>
+ </div>
+</div>
+  
+  <div class="mousetest_image">
+    <img src="images/seth_01.png" alt="portfolio example image 1" >
+    <img src="images/seth_02.png" alt="portfolio example image 2" >
+    <img src="images/seth_03.png" alt="portfolio example image 3" >
+    <img src="images/seth_04.png" alt="portfolio example image 4" >
+    <img src="images/seth_05.png" alt="portfolio example image 5" >
+    <img src="images/seth_06.png" alt="portfolio example image 6" >
+    </div>
+    
+<!-- BEGIN ANCILLARY JQUERY -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/mousestop.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>
+<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+<script type="text/javascript" src="js/jquery-imagefill.js"></script>
+
+<script>
+$(".mousetest_image").imagefill();
+</script>
+
+<!-- Script to Control Green Background Color Height -->
+<script type='text/javascript'>
+	$(document).ready(function() {
+		
+		var windowHeight = $(window).height();
+
+		$('#text_background, .mousetest_image').css('height', windowHeight);
+
+		(function($,sr){
+
+  // debouncing function from John Hann
+  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  var debounce = function (func, threshold, execAsap) {
+      var timeout;
+
+      return function debounced () {
+          var obj = this, args = arguments;
+          function delayed () {
+              if (!execAsap)
+                  func.apply(obj, args);
+              timeout = null;
+          };
+
+          if (timeout)
+              clearTimeout(timeout);
+          else if (execAsap)
+              func.apply(obj, args);
+
+          timeout = setTimeout(delayed, threshold || 100);
+      };
+  }
+  // smartresize 
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');
+
+
+// usage:
+$(window).smartresize(function(){
+  // code that takes it easy...
+  
+var windowHeight = $(window).height();
+		/*console.log(wrappertop);*/
+
+$('#text_background,.mousetest_image').css('height', windowHeight);
+});
+
+});
+
+</script>
+<!-- Script to Control Mouse and Device Rotation Interactions -->
+<script type="text/javascript">
+$(function() {
+	if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)){
+		
+	init();var count=0;function init(){
+	if(window.DeviceOrientationEvent){
+		window.addEventListener('deviceorientation',function(eventData){
+			var tiltLR=eventData.gamma;
+			var tiltFB=eventData.beta;
+			var dir=eventData.alpha
+			$('#text_background').css('opacity','.75')
+			$('h1, p, a').css('opacity','1');
+	deviceOrientationHandler(tiltLR,tiltFB,dir);},false);
+	} else {
+		
+	}
+}
+
+function deviceOrientationHandler(tiltLR,tiltFB,dir){
+	
+	
+	
+				if (tiltLR <= 30 && tiltLR >= 10) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(1)').css('display', 'inline');
+				}
+				
+				else if (tiltLR <= 50 && tiltLR > 30) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(2)').css('display', 'inline');
+				}
+				
+				else if (tiltLR <= 70 && tiltLR > 50) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(3)').css('display', 'inline');
+				}
+				
+				else if (tiltLR <= -10 && tiltLR > -30) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(4)').css('display', 'inline');
+				}
+				
+				else if (tiltLR <= -30 && tiltLR > -50) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(5)').css('display', 'inline');
+				}
+				
+				else if (tiltLR <= -50 && tiltLR > -70) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(6)').css('display', 'inline');
+				}
+				
+				else {
+					$('.mousetest_image img').css('display','none');
+					
+				}
+	
+}
+	  
+				
+	} 
+	
+	else {
+      $('#text_background').mousemove(function(e) {
+		  
+		  $(this)
+				/*.delay(0, "fader")*/
+				.queue("fader", function(next) {
+    				$(this).animate({opacity: .75, easing: 'easeInQuad'}, 
+        				{duration: 800, queue: false});
+    				next();
+				})
+				.dequeue("fader");
+				
+            var offset = $(this).offset(),
+				imageWidth = $(this).outerWidth(),
+				leftPosition = (e.pageX - offset.left),
+				percentagePosition  = Math.round(((leftPosition / imageWidth) * 100 ));
+            
+			
+			if (percentagePosition <= 16 && percentagePosition >= 0) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(1)').css('display', 'inline');
+				}
+				
+				else if (percentagePosition <= 32 && percentagePosition > 16) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(2)').css('display', 'inline');
+				}
+				
+				else if (percentagePosition <= 48 && percentagePosition > 32) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(3)').css('display', 'inline');
+				}
+				
+				else if (percentagePosition <= 64 && percentagePosition > 48) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(4)').css('display', 'inline');
+				}
+				
+				else if (percentagePosition <= 80 && percentagePosition > 64) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(5)').css('display', 'inline');
+				}
+				
+				else if (percentagePosition <= 100 && percentagePosition > 80) {
+					$('.mousetest_image img').css('display','none');
+					$('.mousetest_image img:nth-child(6)').css('display', 'inline');
+				}
+				
+				else {
+					$('.mousetest_image img').css('display','none');
+					
+				}
+				
+      });
+	  
+	  $('#text_background')
+		
+		.mousestop(function() {
+			$(this)
+				.delay(1000, "fader")
+				.queue("fader", function(next) {
+    				$(this).animate({opacity: 1}, 
+        				{duration: 600, queue: false});
+    				next();
+				})
+				.dequeue("fader")
+			console.log('mousestop');
+		})
+		
+		.mouseleave(function() {
+			$(this)
+				.delay(1000, "fader")
+				.queue("fader", function(next) {
+    				$(this).animate({opacity: 1}, 
+        				{duration: 600, queue: false});
+    				next();
+				})
+				.dequeue("fader")
+			console.log('mousestop');
+		});
+	  
+	 
+	}
+	
+});
+</script>
+
+    
+<!-- Script to Solve the Mobile Device Rotating Scale Issue -->
+<script type="text/javascript">
+(function(doc) {
+
+	var addEvent = 'addEventListener',
+	    type = 'gesturestart',
+	    qsa = 'querySelectorAll',
+	    scales = [1, 1],
+	    meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+	function fix() {
+		meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+		doc.removeEventListener(type, fix, true);
+	}
+
+	if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+		fix();
+		scales = [.25, 1.6];
+		doc[addEvent](type, fix, true);
+	}
+
+}(document));
+</script>
+</body>
+</html>
