@@ -116,11 +116,11 @@ a {
 .main-content h1 {
  border-bottom:1px solid #606C71; 
 }
-
 .video-embed {
   max-width:100%; 
 }
-}
+.player .video-wrapper {
+  background-color:#FFFFFF; 
 }
 .main-content p {
   margin-bottom: 1em; }
